@@ -18,7 +18,7 @@ SUBDIRECTORY="apps/norminette"
 
 rm -rf $BUILD_DIR $BUNDLE_DIR
 mkdir $BUILD_DIR $BUNDLE_DIR
-python3 -m venv $BUILD_DIR/venv
+python3 -m venv $BUILD_DIR/venv --symlinks
 source $BUILD_DIR/venv/bin/activate
 python3 setup.py install
 sed -i '' 's#\#\!\/.*norminette.*/venv#\#\!/usr/local/share/norminetteV3/venv#' $BUILD_DIR/venv/bin/*
